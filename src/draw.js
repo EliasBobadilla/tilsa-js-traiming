@@ -111,7 +111,9 @@ const createEnemy = (x, y) => {
         SIZE
       );
     },
-    moves: () => {
+    moves: (collisionWithHero) => {
+      collisionWithHero(x, y);
+
       if (counter < delay) {
         counter++;
       } else {
@@ -217,8 +219,8 @@ const createHero = () => {
     draw: () => {
       ctx.drawImage(tileMap, 32, 32, 32, 32, x * SIZE, y * SIZE, SIZE, SIZE);
     },
-    checkCollision: (x, y) => {
-      if (x === x && y === y) {
+    checkCollision: (xAxis, yAxis) => {
+      if (x === xAxis && y === yAxis) {
         resetHero();
       }
     },

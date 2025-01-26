@@ -48,7 +48,7 @@ function run() {
   hero.draw();
 
   for (let c = 0; c < enemies.length; c++) {
-    enemies[c].moves();
+    enemies[c].moves(hero.checkCollision);
     enemies[c].draw();
   }
 }
